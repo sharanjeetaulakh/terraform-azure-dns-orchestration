@@ -1,6 +1,5 @@
-
-.terraform/
+@"
+**/.terraform/
 *.tfstate
 *.tfstate.*
-*.tfvars
-*.tfvars.json
+"@ | Set-Content .gitignore
