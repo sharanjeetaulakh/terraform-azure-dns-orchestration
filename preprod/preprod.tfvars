@@ -14,7 +14,7 @@ dnsrecords = {
   record01 = {
     name                = "test"
     zone_name           = "aulakhcreative.online"
-    resource_group_name = "rg-lms-idn-preprod-01"
+    resource_group_name = "rg-studio-preprod-01"
     ttl                 = 300
     records             = ["10.0.180.17"]
   }
@@ -33,21 +33,21 @@ vnets = {
       Owner       = "DevOps"
     }
   }
-
-
-subnets = {
-  frontend = {
-    name                 = "snet-studio-web-01"
-    resource_group_name  = "rg-studio-preprod-01"
-    virtual_network_name = "vnet-dns-idn-preprod-01"
-    address_prefixes     = ["10.0.1.0/24"]
-  }
-
-  backend = {
-    name                 = "snet-studio-web-02"
-    resource_group_name  = "rg-studio-preprod-01"
-    virtual_network_name = "vnet-studio-preprod-01"
-    address_prefixes     = ["10.0.2.0/24"]
-  }
-
 }
+
+  subnets = {
+    frontend = {
+      name                 = "snet-studio-web-01"
+      resource_group_name  = "rg-studio-preprod-01"
+      virtual_network_name = "vnet-studio-preprod-01"
+      address_prefixes     = ["10.0.1.0/24"]
+    }
+
+    backend = {
+      name                 = "snet-studio-web-02"
+      resource_group_name  = "rg-studio-preprod-01"
+      virtual_network_name = "vnet-studio-preprod-01"
+      address_prefixes     = ["10.0.2.0/24"]
+    }
+
+  }
