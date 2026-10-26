@@ -129,7 +129,7 @@ nics = {
   }
 }
 
-admin_password = "Studio@Preprod2026!Vm"
+
 
 vms = {
   linux = {
