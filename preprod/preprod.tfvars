@@ -53,8 +53,7 @@ subnets = {
 }
 
 nsgs = {
-  nsg01 = {
-     linux = {
+      linux = {
     name                = "nsg-studio-linux-01"
     location            = "Southeast Asia"
     resource_group_name = "rg-studio-preprod-01"
@@ -176,4 +175,4 @@ nats = {
     zones                   = ["1"]
   }
 }
-}
+
