@@ -7,7 +7,7 @@ rgs = {
 dns-zones = {
   zone01 = {
     name                = "aulakhcreative.online"
-    resource_group_name = "rg-lms-idn-preprod-01"
+    resource_group_name = "rg-studio-preprod-01"
   }
 }
 dnsrecords = {
