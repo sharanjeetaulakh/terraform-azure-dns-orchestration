@@ -65,7 +65,7 @@ nsgs = {
   }
 }
 
-nsg_associations = {
+nsg_asso = {
   linux = {
     nic_key = "linux"
     nsg_key = "linux"
@@ -86,7 +86,7 @@ nics = {
     virtual_network_name = "vnet-studio-preprod-01"
 
   }
-  window = {
+  windows = {
     name     = "nic-studio-windows-01"
     location = "Southeast Asia"
   resource_group_name = "rg-studio-preprod-01" 
