@@ -54,17 +54,50 @@ subnets = {
 
 nsgs = {
   nsg01 = {
+     linux = {
     name                = "nsg-studio-linux-01"
     location            = "Southeast Asia"
     resource_group_name = "rg-studio-preprod-01"
+
+    security_rules = {
+      ssh = {
+        name                       = "Allow-SSH"
+        priority                   = 100
+        destination_port_range     = "22"
+        source_address_prefix      = "YOUR_PUBLIC_IP/32"
+      }
+
+      http = {
+        name                       = "Allow-HTTP"
+        priority                   = 110
+        destination_port_range     = "80"
+        source_address_prefix      = "*"
+      }
+    }
   }
-  nsg02 = {
+
+  windows = {
     name                = "nsg-studio-windows-01"
     location            = "Southeast Asia"
     resource_group_name = "rg-studio-preprod-01"
+
+    security_rules = {
+      rdp = {
+        name                       = "Allow-RDP"
+        priority                   = 100
+        destination_port_range     = "3389"
+        source_address_prefix      = "YOUR_PUBLIC_IP/32"
+      }
+
+      http = {
+        name                       = "Allow-HTTP"
+        priority                   = 110
+        destination_port_range     = "80"
+        source_address_prefix      = "*"
+      }
+    }
   }
 }
-
 nsg-asso = {
   linux = {
     nic_name            = "nic-studio-linux-01"
@@ -80,38 +113,66 @@ nsg-asso = {
 }
 nics = {
   linux = {
-    name                = "nic-studio-linux-01"
-    location            = "Southeast Asia"
-    resource_group_name = "rg-studio-preprod-01"
+    name                 = "nic-studio-linux-01"
+    location             = "Southeast Asia"
+    resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-linux-01"
     virtual_network_name = "vnet-studio-preprod-01"
 
   }
   windows = {
-    name     = "nic-studio-windows-01"
-    location = "Southeast Asia"
-  resource_group_name = "rg-studio-preprod-01" 
-  
+    name                = "nic-studio-windows-01"
+    location            = "Southeast Asia"
+    resource_group_name = "rg-studio-preprod-01"
+
     subnet_name          = "snet-studio-windows-01"
     virtual_network_name = "vnet-studio-preprod-01"
   }
-  }
+}
 
-  nats={
-   linux={
-  name                    = "nat-studio-linux-preprod-01"
-  location                = "Southeast Asia"
-  resource_group_name     ="rg-studio-preprod-01"
-  sku_name                = "Standard"
-  idle_timeout_in_minutes = 10
-  zones                   = ["1"]
+admin_password = "Studio@Preprod2026!Vm"
+
+vms = {
+  linux = {
+    name                = "vm-studio-linux-01"
+    resource_group_name = "rg-studio-preprod-01"
+    location            = "Southeast Asia"
+    size                = "Standard_D2s_v5"
+    admin_username      = "azureadmin"
+    admin_password      = "H@llo123456789"
+    nic_name            = "nic-studio-linux-01"
+
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts"
+    version   = "latest"
+
+    tags = {
+      Environment = "Preprod"
+      ManagedBy   = "Terraform"
+      Project     = "Studio"
+      Owner       = "DevOps"
+    }
+  }
 }
-  windows={
-  name                    = "nat-studio-windows-preprod-01"
-  location                = "Southeast Asia"
-  resource_group_name     = "rg-studio-preprod-01"
-  sku_name                = "Standard"
-  idle_timeout_in_minutes = 10
-  zones                   = ["1"]
-}
+nats = {
+  linux = {
+    name                    = "nat-studio-linux-preprod-01"
+    location                = "Southeast Asia"
+    resource_group_name     = "rg-studio-preprod-01"
+    sku_name                = "Standard"
+    idle_timeout_in_minutes = 10
+    zones                   = ["1"]
+  }
+  windows = {
+    name                    = "nat-studio-windows-preprod-01"
+    location                = "Southeast Asia"
+    resource_group_name     = "rg-studio-preprod-01"
+    sku_name                = "Standard"
+    idle_timeout_in_minutes = 10
+    zones                   = ["1"]
+  }
 }
