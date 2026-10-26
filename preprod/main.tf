@@ -22,7 +22,7 @@ module "dns-subnet" {
   source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-subnet.git"
   subnets    = var.subnets
 }
-module "nsg" {
+module "network_secuity" {
   depends_on = [module.rgs]
   source     = "https://github.com/sharanjeetaulakh/terraform-azure-nsg.git"
  nsgs   = var.nsgs
