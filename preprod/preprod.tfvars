@@ -77,15 +77,21 @@ nsg_associations = {
   }
 }
 
-nics={
-  linux={
- name                = "nic-studio-linux-01"
-  location            = "Southeast Asia"
-  resource_group_name = "rg-studio-preprod-01"
+nics = {
+  linux = {
+    name                = "nic-studio-linux-01"
+    location            = "Southeast Asia"
+    resource_group_name = "rg-studio-preprod-01"
+    subnet_name          = "snet-studio-linux-01"
+    virtual_network_name = "vnet-studio-preprod-01"
 
-}
-window={
- name                = "nic-studio-windows-01"
-  location            = "Southeast Asia"
-  resource_group_name = "rg-studio-preprod-01"}
-}
+  }
+  window = {
+    name     = "nic-studio-windows-01"
+    location = "Southeast Asia"
+  resource_group_name = "rg-studio-preprod-01" 
+  
+    subnet_name          = "snet-studio-windows-01"
+    virtual_network_name = "vnet-studio-preprod-01"
+  }
+  }
