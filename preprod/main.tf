@@ -25,13 +25,10 @@ module "dns-subnet" {
 module "network_secuity" {
   depends_on = [module.rgs]
   source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-nsg.git"
- nsgs   = var.nsgs
+  nsgs       = var.nsgs
 }
-
-
-
-# module "nic" {
-#   depends_on = [module.rgs]
-#   source     = "git::https://github.com/sharanjeetaulakh/azurerm-network-interface.git"
-#   nics       = var.nics
-# }
+module "nic" {
+  depends_on = [module.rgs]
+  source     = "git::https://github.com/sharanjeetaulakh/azurerm-network-interface.git"
+  nics       = var.nics
+}

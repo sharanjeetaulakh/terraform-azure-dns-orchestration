@@ -76,3 +76,16 @@ nsg_associations = {
     nsg_key = "windows"
   }
 }
+
+nics={
+  linux={
+ name                = "nic-studio-linux-01"
+  location            = "Southeast Asia"
+  resource_group_name = "rg-studio-preprod-01"
+
+}
+window={
+ name                = "nic-studio-windows-01"
+  location            = "Southeast Asia"
+  resource_group_name = "rg-studio-preprod-01"}
+}
