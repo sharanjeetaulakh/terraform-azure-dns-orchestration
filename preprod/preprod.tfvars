@@ -3,6 +3,7 @@ rgs = {
     name     = "rg-studio-preprod-01"
     location = "Southeast Asia"
   }
+
 }
 dns-zones = {
   zone01 = {
@@ -35,19 +36,43 @@ vnets = {
   }
 }
 
-  subnets = {
-     linux = {
-      name                 = "snet-studio-linux-01"
-      resource_group_name  = "rg-studio-preprod-01"
-      virtual_network_name = "vnet-studio-preprod-01"
-      address_prefixes     = ["10.0.1.0/24"]
-    }
-
-     windows = {
-      name                 = "snet-studio-windows-01"
-      resource_group_name  = "rg-studio-preprod-01"
-      virtual_network_name = "vnet-studio-preprod-01"
-      address_prefixes     = ["10.0.2.0/24"]
-    }
-
+subnets = {
+  linux = {
+    name                 = "snet-studio-linux-01"
+    resource_group_name  = "rg-studio-preprod-01"
+    virtual_network_name = "vnet-studio-preprod-01"
+    address_prefixes     = ["10.0.1.0/24"]
   }
+
+  windows = {
+    name                 = "snet-studio-windows-01"
+    resource_group_name  = "rg-studio-preprod-01"
+    virtual_network_name = "vnet-studio-preprod-01"
+    address_prefixes     = ["10.0.2.0/24"]
+  }
+}
+
+nsgs = {
+  nsg01 = {
+    name                = "nsg-studio-linux-01"
+    location            = "Southeast Asia"
+    resource_group_name = "rg-studio-preprod-01"
+  }
+  nsg02 = {
+    name                = "nsg-studio-windows-01"
+    location            = "Southeast Asia"
+    resource_group_name = "rg-studio-preprod-01"
+  }
+}
+
+nsg_associations = {
+  linux = {
+    nic_key = "linux"
+    nsg_key = "linux"
+  }
+
+  windows = {
+    nic_key = "windows"
+    nsg_key = "windows"
+  }
+}
