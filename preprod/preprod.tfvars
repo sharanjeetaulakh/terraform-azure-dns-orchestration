@@ -96,3 +96,22 @@ nics = {
     virtual_network_name = "vnet-studio-preprod-01"
   }
   }
+
+  nats={
+   linux={
+  name                    = "nat-studio-linux-preprod-01"
+  location                = "Southeast Asia"
+  resource_group_name     ="rg-studio-preprod-01"
+  sku_name                = "Standard"
+  idle_timeout_in_minutes = 10
+  zones                   = ["1"]
+}
+  windows={
+  name                    = "nat-studio-windows-preprod-01"
+  location                = "Southeast Asia"
+  resource_group_name     = "rg-studio-preprod-01"
+  sku_name                = "Standard"
+  idle_timeout_in_minutes = 10
+  zones                   = ["1"]
+}
+}

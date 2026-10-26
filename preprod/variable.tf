@@ -6,3 +6,4 @@ variable "subnets" {}
 variable "nics" {}
 variable "nsgs" {}
 variable "nsg-asso" {}
+variable "nats"{}
