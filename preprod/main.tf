@@ -27,7 +27,7 @@ module "network_secuity" {
   source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-nsg.git"
   nsgs       = var.nsgs
 }
-module "network_secuity_asso" {
+module "network_secuity-asso" {
   depends_on = [module.rgs]
   source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-nsg.git"
   nsg-asso       = var.nsg-asso
