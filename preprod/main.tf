@@ -27,8 +27,13 @@ module "network_secuity" {
   source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-nsg.git"
   nsgs       = var.nsgs
 }
+module "network_secuity_asso" {
+  depends_on = [module.rgs]
+  source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-nsg.git"
+  nsg-asso       = var.nsg-asso
+}
 module "nic" {
   depends_on = [module.rgs]
-  source     = "git::https://github.com/sharanjeetaulakh/azurerm-network-interface.git"
+  source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-nsg-association"
   nics       = var.nics
 }
