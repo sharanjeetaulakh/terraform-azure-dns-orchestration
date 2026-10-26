@@ -30,8 +30,8 @@ module "nsg" {
 
 
 
-module "nic" {
-  depends_on = [module.rgs]
-  source     = "git::https://github.com/sharanjeetaulakh/azurerm-network-interface.git"
-  nics       = var.nics
-}
+# module "nic" {
+#   depends_on = [module.rgs]
+#   source     = "git::https://github.com/sharanjeetaulakh/azurerm-network-interface.git"
+#   nics       = var.nics
+# }
