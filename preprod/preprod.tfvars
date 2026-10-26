@@ -29,7 +29,7 @@ vnets = {
 
     tags = {
       Environment = "Preprod"
-      Project     = "LoanManagement"
+      Project     = "DNS-Mapping"
       ManagedBy   = "Terraform"
       Owner       = "DevOps"
     }
