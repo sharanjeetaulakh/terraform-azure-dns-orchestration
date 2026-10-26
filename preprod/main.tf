@@ -24,7 +24,7 @@ module "dns-subnet" {
 }
 module "network_secuity" {
   depends_on = [module.rgs]
-  source     = "https://github.com/sharanjeetaulakh/terraform-azure-nsg.git"
+  source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-nsg.git"
  nsgs   = var.nsgs
 }
 
