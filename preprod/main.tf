@@ -34,7 +34,7 @@ module "network_secuity-asso" {
 }
 module "nic" {
   depends_on = [module.rgs]
-  source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-nic.git"
+  source     = "git::https://github.com/sharanjeetaulakh/azurerm-network-interface.git"
   nics       = var.nics
 }
 
