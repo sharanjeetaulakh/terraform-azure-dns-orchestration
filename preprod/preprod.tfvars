@@ -65,7 +65,7 @@ nsgs = {
   }
 }
 
-nsg_asso = {
+nsg-asso = {
   linux = {
     nic_key = "linux"
     nsg_key = "linux"
