@@ -36,15 +36,15 @@ vnets = {
 }
 
   subnets = {
-    frontend = {
-      name                 = "snet-studio-web-01"
+     linux = {
+      name                 = "snet-studio-linux-01"
       resource_group_name  = "rg-studio-preprod-01"
       virtual_network_name = "vnet-studio-preprod-01"
       address_prefixes     = ["10.0.1.0/24"]
     }
 
-    backend = {
-      name                 = "snet-studio-web-02"
+     windows = {
+      name                 = "snet-studio-windows-01"
       resource_group_name  = "rg-studio-preprod-01"
       virtual_network_name = "vnet-studio-preprod-01"
       address_prefixes     = ["10.0.2.0/24"]
