@@ -28,13 +28,13 @@ module "network_secuity" {
   nsgs       = var.nsgs
 }
 module "network_secuity-asso" {
-  depends_on = [module.rgs]
+ depends_on = [module.nic,module.network_secuity ]
   source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-nsg-association.git"
   nsg-asso       = var.nsg-asso
 }
 module "nic" {
-  depends_on = [module.rgs]
-  source     = "git::https://github.com/sharanjeetaulakh/azurerm-network-interface.git"
+ depends_on = [module.subnet, module.rgs]
+   source     = "git::https://github.com/sharanjeetaulakh/azurerm-network-interface.git"
   nics       = var.nics
 }
 
