@@ -67,16 +67,17 @@ nsgs = {
 
 nsg-asso = {
   linux = {
-    nic_key = "linux"
-    nsg_key = "linux"
+    nic_name            = "nic-studio-linux-01"
+    nsg_name            = "nsg-studio-linux-01"
+    resource_group_name = "rg-studio-preprod-01"
   }
 
   windows = {
-    nic_key = "windows"
-    nsg_key = "windows"
+    nic_name            = "nic-studio-windows-01"
+    nsg_name            = "nsg-studio-windows-01"
+    resource_group_name = "rg-studio-preprod-01"
   }
 }
-
 nics = {
   linux = {
     name                = "nic-studio-linux-01"
