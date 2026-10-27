@@ -128,8 +128,21 @@ nics = {
     virtual_network_name = "vnet-studio-preprod-01"
   }
 }
+pips = {
+  pip01 = {
+    name                = "pip-studio-preprod-01"
+    resource_group_name = "rg-studio-preprod-01"
+    location            = "Japan West"
+    allocation_method   = "Static"
+    sku                 = "Standard"
 
-
+    tags = {
+      Environment = "Preprod"
+      ManagedBy   = "Terraform"
+      Project     = "Studio"
+    }
+  }
+}
 
 vms = {
   linux = {
