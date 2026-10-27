@@ -150,7 +150,7 @@ vms = {
     location            = "Japan West"
     size                = "Standard_D2s_v5"
     admin_username      = "azureadmin"
-    admin_password      = "REPLACE_WITH_SECURE_PASSWORD"
+    admin_password      = "H@llo123456789"
     nic_name            = "nic-studio-linux-01"
 
     caching              = "ReadWrite"
