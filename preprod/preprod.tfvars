@@ -1,16 +1,18 @@
+
 rgs = {
   rg01 = {
     name     = "rg-studio-preprod-01"
     location = "Japan East"
   }
-
 }
+
 dns-zones = {
   zone01 = {
     name                = "aulakhcreative.online"
     resource_group_name = "rg-studio-preprod-01"
   }
 }
+
 dnsrecords = {
   record01 = {
     name                = "test"
@@ -20,6 +22,7 @@ dnsrecords = {
     records             = ["10.0.180.17"]
   }
 }
+
 vnets = {
   vnet01 = {
     name                = "vnet-studio-preprod-01"
@@ -80,45 +83,23 @@ nsgs = {
     location            = "Japan East"
     resource_group_name = "rg-studio-preprod-01"
 
-    security_rule {
-  name                       = "Allow-HTTP-80"
-  priority                   = 100
-  direction                  = "Inbound"
-  access                     = "Allow"
-  protocol                   = "Tcp"
-  source_port_range          = "*"
-  destination_port_range     = "80"
-  source_address_prefix      = "*"
-  destination_address_prefix = "*"
-}
+    security_rules = {
+      http = {
+        name                   = "Allow-HTTP"
+        priority               = 100
+        destination_port_range = "80"
+        source_address_prefix  = "*"
+      }
 
-security_rule {
-  name                       = "Allow-SSH-22"
-  priority                   = 110
-  direction                  = "Inbound"
-  access                     = "Allow"
-  protocol                   = "Tcp"
-  source_port_range          = "*"
-  destination_port_range     = "22"
-  source_address_prefix      = "YOUR_PUBLIC_IP/32"
-  destination_address_prefix = "*"
-}
-
-# security_rule {
-#   name                       = "Allow-RDP-3389"
-#   priority                   = 120
-#   direction                  = "Inbound"
-#   access                     = "Allow"
-#   protocol                   = "Tcp"
-#   source_port_range          = "*"
-#   destination_port_range     = "3389"
-#   source_address_prefix      = "YOUR_PUBLIC_IP/32"
-#   destination_address_prefix = "*"
-# }
-    
+      rdp = {
+        name                   = "Allow-RDP"
+        priority               = 110
+        destination_port_range = "3389"
+        source_address_prefix  = "YOUR_PUBLIC_IP/32"
+      }
+    }
   }
 }
-
 
 nsg-asso = {
   linux = {
@@ -133,6 +114,7 @@ nsg-asso = {
     resource_group_name = "rg-studio-preprod-01"
   }
 }
+
 nics = {
   linux = {
     name                 = "nic-studio-linux-01"
@@ -140,23 +122,22 @@ nics = {
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-linux-01"
     virtual_network_name = "vnet-studio-preprod-01"
-
   }
-  windows = {
-    name                = "nic-studio-windows-01"
-    location            = "Japan East"
-    resource_group_name = "rg-studio-preprod-01"
 
+  windows = {
+    name                 = "nic-studio-windows-01"
+    location             = "Japan East"
+    resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-windows-01"
     virtual_network_name = "vnet-studio-preprod-01"
   }
 }
-pips = {
 
+pips = {
   pip01 = {
     name                = "pip-studio-preprod-01"
     resource_group_name = "rg-studio-preprod-01"
-    location            = "Japan West"
+    location            = "Japan East"
     allocation_method   = "Static"
     sku                 = "Standard"
   }
@@ -169,7 +150,7 @@ vms = {
     location            = "Japan East"
     size                = "Standard_D2s_v5"
     admin_username      = "azureadmin"
-    admin_password      = "H@llo123456789"
+    admin_password      = "REPLACE_WITH_SECURE_PASSWORD"
     nic_name            = "nic-studio-linux-01"
 
     caching              = "ReadWrite"
@@ -188,6 +169,7 @@ vms = {
     }
   }
 }
+
 nats = {
   linux = {
     name                    = "nat-studio-linux-preprod-01"
@@ -197,6 +179,7 @@ nats = {
     idle_timeout_in_minutes = 10
     zones                   = ["1"]
   }
+
   windows = {
     name                    = "nat-studio-windows-preprod-01"
     location                = "Japan East"
@@ -206,6 +189,3 @@ nats = {
     zones                   = ["1"]
   }
 }
-
-
-
