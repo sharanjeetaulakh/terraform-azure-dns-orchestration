@@ -33,20 +33,28 @@ module "network_secuity" {
   nsgs       = var.nsgs
 }
 
+module "network_secuity-asso" {
+  depends_on = [module.nic, module.network_secuity]
+  source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-nsg-association.git"
+  nsg-asso   = var.nsg-asso
+}
+
+module "public-ip"{
+  depends_on = [ module.rg, module.nic ]
+  source="git::https://github.com/NovaInfraLabs/terraform-azure-public-ip.git"
+  pips=var.pips
+
+}
+
 module "nic" {
   depends_on = [module.subnet, module.rgs]
   source     = "git::https://github.com/sharanjeetaulakh/azurerm-network-interface.git"
   nics       = var.nics
 }
 
-module "network_secuity-asso" {
-  depends_on = [module.nic, module.network_secuity]
-  source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-nsg-association.git"
-  nsg-asso   = var.nsg-asso
-}
 module "linux_vm" {
   depends_on = [module.nic]
-  source = "git::https://github.com/sharanjeetaulakh/terraform-azure-linux-vm.git"
+  source = "git::https://github.com/sharanjeetaulakh/terraform-azure-public-ip.git"
   vms            = var.vms
-  admin_password = var.admin_password
+ 
 }

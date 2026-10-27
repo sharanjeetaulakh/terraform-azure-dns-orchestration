@@ -1,7 +1,7 @@
 rgs = {
   rg01 = {
     name     = "rg-studio-preprod-01"
-    location = "Southeast Asia"
+    location = "Japan East"
   }
 
 }
@@ -23,7 +23,7 @@ dnsrecords = {
 vnets = {
   vnet01 = {
     name                = "vnet-studio-preprod-01"
-    location            = "Southeast Asia"
+    location            = "Japan East"
     resource_group_name = "rg-studio-preprod-01"
     address_space       = ["10.0.0.0/16"]
 
@@ -55,7 +55,7 @@ subnets = {
 nsgs = {
       linux = {
     name                = "nsg-studio-linux-01"
-    location            = "Southeast Asia"
+    location            = "Japan East"
     resource_group_name = "rg-studio-preprod-01"
 
     security_rules = {
@@ -77,7 +77,7 @@ nsgs = {
 
   windows = {
     name                = "nsg-studio-windows-01"
-    location            = "Southeast Asia"
+    location            = "Japan East"
     resource_group_name = "rg-studio-preprod-01"
 
     security_rules = {
@@ -113,7 +113,7 @@ nsg-asso = {
 nics = {
   linux = {
     name                 = "nic-studio-linux-01"
-    location             = "Southeast Asia"
+    location             = "Japan East"
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-linux-01"
     virtual_network_name = "vnet-studio-preprod-01"
@@ -121,7 +121,7 @@ nics = {
   }
   windows = {
     name                = "nic-studio-windows-01"
-    location            = "Southeast Asia"
+    location            = "Japan East"
     resource_group_name = "rg-studio-preprod-01"
 
     subnet_name          = "snet-studio-windows-01"
@@ -135,7 +135,7 @@ vms = {
   linux = {
     name                = "vm-studio-linux-01"
     resource_group_name = "rg-studio-preprod-01"
-    location            = "Southeast Asia"
+    location            = "Japan East"
     size                = "Standard_D2s_v5"
     admin_username      = "azureadmin"
     admin_password      = "H@llo123456789"
@@ -160,7 +160,7 @@ vms = {
 nats = {
   linux = {
     name                    = "nat-studio-linux-preprod-01"
-    location                = "Southeast Asia"
+    location                = "Japan East"
     resource_group_name     = "rg-studio-preprod-01"
     sku_name                = "Standard"
     idle_timeout_in_minutes = 10
@@ -168,11 +168,13 @@ nats = {
   }
   windows = {
     name                    = "nat-studio-windows-preprod-01"
-    location                = "Southeast Asia"
+    location                = "Japan East"
     resource_group_name     = "rg-studio-preprod-01"
     sku_name                = "Standard"
     idle_timeout_in_minutes = 10
     zones                   = ["1"]
   }
 }
+
+
 
