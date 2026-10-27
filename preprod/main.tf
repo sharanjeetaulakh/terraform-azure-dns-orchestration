@@ -40,7 +40,7 @@ module "network_secuity-asso" {
 }
 
 module "public-ip" {
-  depends_on = [module.rg, module.nic]
+  depends_on = [module.rgs, module.nic]
   source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-public-ip.git"
   pips       = var.pips
 
