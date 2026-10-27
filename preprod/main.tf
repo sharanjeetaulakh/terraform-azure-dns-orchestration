@@ -53,8 +53,8 @@ module "nic" {
 }
 
 module "linux_vm" {
-  depends_on = [module.nic]
-  source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-linux-vm"
-  vms        = var.vms
+  depends_on     = [module.nic]
+  source         = "git::https://github.com/sharanjeetaulakh/terraform-azure-linux-vm"
+  vms            = var.vms
   admin_password = var.admin_password
 }
