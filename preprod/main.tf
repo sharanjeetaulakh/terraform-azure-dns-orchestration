@@ -54,7 +54,7 @@ module "nic" {
 
 module "linux_vm" {
   depends_on = [module.nic]
-  source = "git::https://github.com/sharanjeetaulakh/terraform-azure-public-ip.git"
+  source = "git::https://github.com/sharanjeetaulakh/terraform-azure-linux-vm"
   vms            = var.vms
  
 }
