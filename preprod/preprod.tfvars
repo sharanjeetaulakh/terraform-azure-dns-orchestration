@@ -138,15 +138,7 @@ pips = {
     sku                 = "Standard"
   }
 }
-    name                = "pip-studio-preprod-01"
-    resource_group_name = "rg-studio-preprod-01"
-    location            = "Japan West"
-    allocation_method   = "Static"
-    sku                 = "Standard"
-  }
-}
-
-
+ 
 vms = {
   linux = {
     name                = "vm-studio-linux-01"
