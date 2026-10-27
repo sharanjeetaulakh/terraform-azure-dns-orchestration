@@ -104,20 +104,22 @@ security_rule {
   destination_address_prefix = "*"
 }
 
-security_rule {
-  name                       = "Allow-RDP-3389"
-  priority                   = 120
-  direction                  = "Inbound"
-  access                     = "Allow"
-  protocol                   = "Tcp"
-  source_port_range          = "*"
-  destination_port_range     = "3389"
-  source_address_prefix      = "YOUR_PUBLIC_IP/32"
-  destination_address_prefix = "*"
-}
-    }
+# security_rule {
+#   name                       = "Allow-RDP-3389"
+#   priority                   = 120
+#   direction                  = "Inbound"
+#   access                     = "Allow"
+#   protocol                   = "Tcp"
+#   source_port_range          = "*"
+#   destination_port_range     = "3389"
+#   source_address_prefix      = "YOUR_PUBLIC_IP/32"
+#   destination_address_prefix = "*"
+# }
+    
   }
 }
+
+
 nsg-asso = {
   linux = {
     nic_name            = "nic-studio-linux-01"
