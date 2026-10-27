@@ -129,8 +129,8 @@ nics = {
   }
 }
 pips = {
-  pip01 = {pips = {
-  pip01 = {
+ 
+ pip01 = {
     name                = "pip-studio-preprod-01"
     resource_group_name = "rg-studio-preprod-01"
     location            = "Japan West"
