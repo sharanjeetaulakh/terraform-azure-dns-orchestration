@@ -80,20 +80,41 @@ nsgs = {
     location            = "Japan East"
     resource_group_name = "rg-studio-preprod-01"
 
-    security_rules = {
-      rdp = {
-        name                   = "Allow-RDP"
-        priority               = 100
-        destination_port_range = "3389"
-        source_address_prefix  = "YOUR_PUBLIC_IP/32"
-      }
+    security_rule {
+  name                       = "Allow-HTTP-80"
+  priority                   = 100
+  direction                  = "Inbound"
+  access                     = "Allow"
+  protocol                   = "Tcp"
+  source_port_range          = "*"
+  destination_port_range     = "80"
+  source_address_prefix      = "*"
+  destination_address_prefix = "*"
+}
 
-      http = {
-        name                   = "Allow-HTTP"
-        priority               = 110
-        destination_port_range = "80"
-        source_address_prefix  = "*"
-      }
+security_rule {
+  name                       = "Allow-SSH-22"
+  priority                   = 110
+  direction                  = "Inbound"
+  access                     = "Allow"
+  protocol                   = "Tcp"
+  source_port_range          = "*"
+  destination_port_range     = "22"
+  source_address_prefix      = "YOUR_PUBLIC_IP/32"
+  destination_address_prefix = "*"
+}
+
+security_rule {
+  name                       = "Allow-RDP-3389"
+  priority                   = 120
+  direction                  = "Inbound"
+  access                     = "Allow"
+  protocol                   = "Tcp"
+  source_port_range          = "*"
+  destination_port_range     = "3389"
+  source_address_prefix      = "YOUR_PUBLIC_IP/32"
+  destination_address_prefix = "*"
+}
     }
   }
 }
