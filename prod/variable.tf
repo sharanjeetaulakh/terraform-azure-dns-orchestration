@@ -1,3 +1,3 @@
 variable "rgs" {}
-variable "dns-zones"{}
+variable "dns-zones" {}
 variable "dnsrecords" {}

@@ -6,10 +6,11 @@ variable "subnets" {}
 variable "nics" {}
 variable "nsgs" {}
 variable "nsg-asso" {}
+variable "pips" {}
 variable "vms" {}
 variable "admin_password" {
   type      = string
   sensitive = true
 }
 variable "nats" {}
-variable "pips" {}
+variable "pips"{}
