@@ -13,4 +13,3 @@ variable "admin_password" {
   sensitive = true
 }
 variable "nats" {}
-variable "pips"{}
