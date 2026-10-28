@@ -15,7 +15,7 @@ dns-zones = {
 
 dnsrecords = {
   record01 = {
-    name                = "test"
+    name                = "studio"
     zone_name           = "aulakhcreative.online"
     resource_group_name = "rg-studio-preprod-01"
     ttl                 = 300
