@@ -207,7 +207,7 @@ vms-win = {
     name                = "vm-studio-pre01"
     location            = "japaneast"
     resource_group_name = "rg-studio-preprod-01"
-    size                = "Standard_B1s"
+    size                = "Standard_D2s_v5"
     admin_username      = "azureadmin"
     nic_name            = "nic-studio-windows-01"
 
@@ -220,23 +220,23 @@ vms-win = {
     version   = "latest"
   }
 
-  vm2 = {
-    name                = "vm-studio-pre02"
-    location            = "japaneast"
-    resource_group_name = "rg-studio-preprod-01"
-    size                =  "Standard_B1s"
-    admin_username      = "azureadmin"
-    nic_name            = "nic-studio-win-preprod-02"
+#   vm2 = {
+#     name                = "vm-studio-pre02"
+#     location            = "japaneast"
+#     resource_group_name = "rg-studio-preprod-01"
+#     size                =  "Standard_B1s"
+#     admin_username      = "azureadmin"
+#     nic_name            = "nic-studio-win-preprod-02"
 
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
+#     caching              = "ReadWrite"
+#     storage_account_type = "Standard_LRS"
 
-    publisher = "MicrosoftWindowsServer"
-    offer     = "WindowsServer"
-    sku       = "2022-datacenter-azure-edition"
-    version   = "latest"
-  }
-}
+#     publisher = "MicrosoftWindowsServer"
+#     offer     = "WindowsServer"
+#     sku       = "2022-datacenter-azure-edition"
+#     version   = "latest"
+#   }
+# }
 
 # NAT Gateway configuration intentionally disabled.
 # Enable only after the NAT Gateway module and subnet associations are configured.
