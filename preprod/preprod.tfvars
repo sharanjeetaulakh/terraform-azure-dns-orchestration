@@ -1,4 +1,4 @@
-```hcl
+
 rgs = {
   rg01 = {
     name     = "rg-studio-preprod-01"
@@ -260,4 +260,3 @@ vms-win = {
 #     zones                   = ["1"]
 #   }
 # }
-```
