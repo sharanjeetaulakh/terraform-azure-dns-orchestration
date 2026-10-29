@@ -72,10 +72,8 @@ module "linux_vm" {
 
 module "win_vm" {
   depends_on = [module.nic]
-
   source = "git::https://github.com/sharanjeetaulakh/terraform-azure-windows.git"
-
   vms-win= var.vms-win
-    # admin_password = var.admin_password
+    admin_password = var.admin_password
 }
 
