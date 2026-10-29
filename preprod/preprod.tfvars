@@ -124,8 +124,17 @@ nics = {
     public_ip_name       = "pip-studio-preprod-01"
   }
 
-  windows = {
-    name                 = "nic-studio-windows-01"
+  win1 = {
+    name                 = "nic-studio-win-preprod-01"
+    location             = "japaneast"
+    resource_group_name  = "rg-studio-preprod-01"
+    subnet_name          = "snet-studio-windows-01"
+    virtual_network_name = "vnet-studio-preprod-01"
+    public_ip_name       = "pip-studio-windows-01"
+  }
+
+  win2 = {
+    name                 = "nic-studio-win-preprod-02"
     location             = "japaneast"
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-windows-01"
@@ -179,36 +188,23 @@ vms-linux = {
 }
 vms-win = {
   vm1 = {
-    name                 = "vm-studio-win-preprod-01"
-    resource_group_name  = "rg-studio-preprod-01"
-    location             ="japaneast"
-    size                 = "Standard_D2s_v5"
-    admin_username       = "azureuser"
-    nic_name             = "nic-studio-win-preprod-01"
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
-    publisher            = "MicrosoftWindowsServer"
-    offer                = "WindowsServer"
-    sku                  = "2022-datacenter-azure-edition"
-    version              = "latest"
+    name                = "vm-studio-win-preprod-01"
+    location            = "japaneast"
+    resource_group_name = "rg-studio-preprod-01"
+    size                = "Standard_D2s_v5"
+    admin_username      = "azureadmin"
+    nic_name            = "nic-studio-win-preprod-01"
   }
 
   vm2 = {
-    name                 = "vm-studio-win-preprod-02"
-    resource_group_name  = "rg-studio-preprod-01"
-    location             = "japaneast"
-    size                 = "Standard_D2s_v5"
-    admin_username       = "azureuser"
-    nic_name             = "nic-studio-win-preprod-02"
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
-    publisher            = "MicrosoftWindowsServer"
-    offer                = "WindowsServer"
-    sku                  = "2022-datacenter-azure-edition"
-    version              = "latest"
+    name                = "vm-studio-win-preprod-02"
+    location            = "japaneast"
+    resource_group_name = "rg-studio-preprod-01"
+    size                = "Standard_D2s_v5"
+    admin_username      = "azureadmin"
+    nic_name            = "nic-studio-win-preprod-02"
   }
 }
-
   # nats = {
   #   linux = {
   #     name                    = "nat-studio-linux-preprod-01"
