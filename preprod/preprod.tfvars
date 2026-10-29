@@ -1,4 +1,4 @@
-
+```hcl
 rgs = {
   rg01 = {
     name     = "rg-studio-preprod-01"
@@ -113,7 +113,14 @@ nsg-asso = {
     nsg_name            = "nsg-studio-windows-01"
     resource_group_name = "rg-studio-preprod-01"
   }
+
+  win2 = {
+    nic_name            = "nic-studio-win-preprod-02"
+    nsg_name            = "nsg-studio-windows-01"
+    resource_group_name = "rg-studio-preprod-01"
+  }
 }
+
 nics = {
   linux = {
     name                 = "nic-studio-linux-01"
@@ -124,8 +131,8 @@ nics = {
     public_ip_name       = "pip-studio-preprod-01"
   }
 
-  win1 = {
-    name                 = "nic-studio-win-preprod-01"
+  windows = {
+    name                 = "nic-studio-windows-01"
     location             = "japaneast"
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-windows-01"
@@ -139,9 +146,10 @@ nics = {
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-windows-01"
     virtual_network_name = "vnet-studio-preprod-01"
-    public_ip_name       = "pip-studio-windows-01"
+    public_ip_name       = "pip-studio-windows-02"
   }
 }
+
 pips = {
   pip01 = {
     name                = "pip-studio-preprod-01"
@@ -158,6 +166,14 @@ pips = {
     allocation_method   = "Static"
     sku                 = "Standard"
   }
+
+  pip03 = {
+    name                = "pip-studio-windows-02"
+    resource_group_name = "rg-studio-preprod-01"
+    location            = "japaneast"
+    allocation_method   = "Static"
+    sku                 = "Standard"
+  }
 }
 
 vms-linux = {
@@ -167,7 +183,6 @@ vms-linux = {
     location            = "japaneast"
     size                = "Standard_D2s_v5"
     admin_username      = "azureadmin"
-    admin_password      = "H@llo123456789"
     nic_name            = "nic-studio-linux-01"
 
     caching              = "ReadWrite"
@@ -186,6 +201,7 @@ vms-linux = {
     }
   }
 }
+
 vms-win = {
   vm1 = {
     name                = "vm-studio-win-preprod-01"
@@ -193,7 +209,15 @@ vms-win = {
     resource_group_name = "rg-studio-preprod-01"
     size                = "Standard_D2s_v5"
     admin_username      = "azureadmin"
-    nic_name            = "nic-studio-win-preprod-01"
+    nic_name            = "nic-studio-windows-01"
+
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2022-datacenter-azure-edition"
+    version   = "latest"
   }
 
   vm2 = {
@@ -203,27 +227,37 @@ vms-win = {
     size                = "Standard_D2s_v5"
     admin_username      = "azureadmin"
     nic_name            = "nic-studio-win-preprod-02"
+
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2022-datacenter-azure-edition"
+    version   = "latest"
   }
 }
-  # nats = {
-  #   linux = {
-  #     name                    = "nat-studio-linux-preprod-01"
-  #     location                = "japaneast"
-  #     resource_group_name     = "rg-studio-preprod-01"
-  #     sku_name                = "Standard"
-  #     idle_timeout_in_minutes = 10
-  #     zones                   = ["1"]
-  #   }
 
-  #   windows = {
-  #     name                    = "nat-studio-windows-preprod-01"
-  #     location                = "japaneast"
-  #     resource_group_name     = "rg-studio-preprod-01"
-  #     sku_name                = "Standard"
-  #     idle_timeout_in_minutes = 10
-  #     zones                   = ["1"]
-  #   }
-  # }
-
-
-  
+# NAT Gateway configuration intentionally disabled.
+# Enable only after the NAT Gateway module and subnet associations are configured.
+#
+# nats = {
+#   linux = {
+#     name                    = "nat-studio-linux-preprod-01"
+#     location                = "japaneast"
+#     resource_group_name     = "rg-studio-preprod-01"
+#     sku_name                = "Standard"
+#     idle_timeout_in_minutes = 10
+#     zones                   = ["1"]
+#   }
+#
+#   windows = {
+#     name                    = "nat-studio-windows-preprod-01"
+#     location                = "japaneast"
+#     resource_group_name     = "rg-studio-preprod-01"
+#     sku_name                = "Standard"
+#     idle_timeout_in_minutes = 10
+#     zones                   = ["1"]
+#   }
+# }
+```
