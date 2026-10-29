@@ -12,4 +12,4 @@ variable "admin_password" {
   type      = string
   sensitive = true
 }
-variable "nms1"{}
+variable "vms-win"{}
