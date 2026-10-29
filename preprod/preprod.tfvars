@@ -23,6 +23,13 @@ dnsrecords = {
   }
 }
 
+private-dns={
+  private-dns01={
+    name                = "studio.aulakhcreative.online"
+  resource_group_name = "rg-studio-preprod-01"
+  }
+}
+
 vnets = {
   vnet01 = {
     name                = "vnet-studio-preprod-01"
@@ -260,3 +267,4 @@ vms-win = {
 #     zones                   = ["1"]
 #   }
 # }
+}

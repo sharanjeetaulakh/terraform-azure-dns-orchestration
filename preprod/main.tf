@@ -77,3 +77,9 @@ module "win_vm" {
   vms-win            = var.vms-win
   admin_password_win = var.admin_password_win
 }
+
+module "private-dns-zone" {
+  depends_on=[module.rgs]
+  source = "https://github.com/sharanjeetaulakh/terraform-azure-private-dns-zone"
+  private-dns=var.private-dns
+}
