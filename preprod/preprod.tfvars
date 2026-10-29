@@ -22,7 +22,6 @@ dnsrecords = {
     records             = ["10.0.180.17"]
   }
 }
-
 vnets = {
   vnet01 = {
     name                = "vnet-studio-preprod-01"

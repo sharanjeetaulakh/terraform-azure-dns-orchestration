@@ -12,4 +12,4 @@ variable "admin_password" {
   type      = string
   sensitive = true
 }
-variable "nats" {}
+variable "nms1"{}
