@@ -207,7 +207,7 @@ vms-win = {
     name                = "vm-studio-pre01"
     location            = "japaneast"
     resource_group_name = "rg-studio-preprod-01"
-    size                = "Standard_D2s_v5"
+    size                = size = "Standard_B1s"
     admin_username      = "azureadmin"
     nic_name            = "nic-studio-windows-01"
 
@@ -224,7 +224,7 @@ vms-win = {
     name                = "vm-studio-pre02"
     location            = "japaneast"
     resource_group_name = "rg-studio-preprod-01"
-    size                = "Standard_D2s_v5"
+    size                =  "Standard_B1s"
     admin_username      = "azureadmin"
     nic_name            = "nic-studio-win-preprod-02"
 
