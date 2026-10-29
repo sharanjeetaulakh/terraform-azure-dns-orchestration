@@ -114,7 +114,6 @@ nsg-asso = {
     resource_group_name = "rg-studio-preprod-01"
   }
 }
-
 nics = {
   linux = {
     name                 = "nic-studio-linux-01"
@@ -122,6 +121,7 @@ nics = {
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-linux-01"
     virtual_network_name = "vnet-studio-preprod-01"
+    public_ip_name       = "pip-studio-preprod-01"
   }
 
   windows = {
@@ -130,6 +130,7 @@ nics = {
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-windows-01"
     virtual_network_name = "vnet-studio-preprod-01"
+    public_ip_name       = "pip-studio-preprod-01"
   }
 }
 
@@ -201,26 +202,25 @@ vms-win = {
   }
 }
 
+  # nats = {
+  #   linux = {
+  #     name                    = "nat-studio-linux-preprod-01"
+  #     location                = "japaneast"
+  #     resource_group_name     = "rg-studio-preprod-01"
+  #     sku_name                = "Standard"
+  #     idle_timeout_in_minutes = 10
+  #     zones                   = ["1"]
+  #   }
 
-  nats = {
-    linux = {
-      name                    = "nat-studio-linux-preprod-01"
-      location                = "japaneast"
-      resource_group_name     = "rg-studio-preprod-01"
-      sku_name                = "Standard"
-      idle_timeout_in_minutes = 10
-      zones                   = ["1"]
-    }
-
-    windows = {
-      name                    = "nat-studio-windows-preprod-01"
-      location                = "japaneast"
-      resource_group_name     = "rg-studio-preprod-01"
-      sku_name                = "Standard"
-      idle_timeout_in_minutes = 10
-      zones                   = ["1"]
-    }
-  }
+  #   windows = {
+  #     name                    = "nat-studio-windows-preprod-01"
+  #     location                = "japaneast"
+  #     resource_group_name     = "rg-studio-preprod-01"
+  #     sku_name                = "Standard"
+  #     idle_timeout_in_minutes = 10
+  #     zones                   = ["1"]
+  #   }
+  # }
 
 
   
