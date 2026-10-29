@@ -121,7 +121,7 @@ nics = {
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-linux-01"
     virtual_network_name = "vnet-studio-preprod-01"
-    public_ip_name       = "pip-studio-linux-01"
+    public_ip_name       = "pip-studio-preprod-01"
   }
 
   windows = {
