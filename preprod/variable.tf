@@ -25,4 +25,4 @@ variable "admin_password_linux" {
   type        = string
   sensitive   = true
 }
-variable "private-dns"{}
+variable "private-dns" {}
