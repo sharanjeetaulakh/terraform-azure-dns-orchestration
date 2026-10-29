@@ -8,7 +8,7 @@ variable "nsgs" {}
 variable "nsg-asso" {}
 variable "pips" {}
 variable "vms" {}
-variable "admin_password" {
+variable "admin_password_linux" {
   type      = string
     description = "Administrator password for Linux VM"
 
@@ -16,7 +16,7 @@ variable "admin_password" {
 }
 variable "vms-win"{}
 
-variable "admin_password" {
+variable "admin_password_win" {
   description = "Administrator password for Windows VM"
   type        = string
   sensitive   = true
