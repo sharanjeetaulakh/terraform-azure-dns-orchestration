@@ -113,7 +113,7 @@ nsg-asso = {
     nsg_name            = "nsg-studio-windows-01"
     resource_group_name = "rg-studio-preprod-01"
   }
-}  
+}
 
 nics = {
   linux = {
@@ -170,25 +170,25 @@ vms = {
   }
 
 
-nats = {
-  linux = {
-    name                    = "nat-studio-linux-preprod-01"
-    location                = "japaneast"
-    resource_group_name     = "rg-studio-preprod-01"
-    sku_name                = "Standard"
-    idle_timeout_in_minutes = 10
-    zones                   = ["1"]
-  }
+  nats = {
+    linux = {
+      name                    = "nat-studio-linux-preprod-01"
+      location                = "japaneast"
+      resource_group_name     = "rg-studio-preprod-01"
+      sku_name                = "Standard"
+      idle_timeout_in_minutes = 10
+      zones                   = ["1"]
+    }
 
-  windows = {
-    name                    = "nat-studio-windows-preprod-01"
-    location                = "japaneast"
-    resource_group_name     = "rg-studio-preprod-01"
-    sku_name                = "Standard"
-    idle_timeout_in_minutes = 10
-    zones                   = ["1"]
+    windows = {
+      name                    = "nat-studio-windows-preprod-01"
+      location                = "japaneast"
+      resource_group_name     = "rg-studio-preprod-01"
+      sku_name                = "Standard"
+      idle_timeout_in_minutes = 10
+      zones                   = ["1"]
+    }
   }
-}
 }
 
   
