@@ -135,7 +135,7 @@ nics = {
 }
 pips = {
   pip01 = {
-    name                = "pip-studio-linux-01"
+    name                = "pip-studio-preprod-01"
     resource_group_name = "rg-studio-preprod-01"
     location            = "japaneast"
     allocation_method   = "Static"
