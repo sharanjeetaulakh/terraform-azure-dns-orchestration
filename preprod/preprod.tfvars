@@ -121,7 +121,7 @@ nics = {
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-linux-01"
     virtual_network_name = "vnet-studio-preprod-01"
-    public_ip_name       = "pip-studio-preprod-01"
+    public_ip_name       = "pip-studio-linux-01"
   }
 
   windows = {
@@ -130,13 +130,20 @@ nics = {
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-windows-01"
     virtual_network_name = "vnet-studio-preprod-01"
-    public_ip_name       = "pip-studio-preprod-01"
+    public_ip_name       = "pip-studio-windows-01"
   }
 }
-
 pips = {
   pip01 = {
-    name                = "pip-studio-preprod-01"
+    name                = "pip-studio-linux-01"
+    resource_group_name = "rg-studio-preprod-01"
+    location            = "japaneast"
+    allocation_method   = "Static"
+    sku                 = "Standard"
+  }
+
+  pip02 = {
+    name                = "pip-studio-windows-01"
     resource_group_name = "rg-studio-preprod-01"
     location            = "japaneast"
     allocation_method   = "Static"
