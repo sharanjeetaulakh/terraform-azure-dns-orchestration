@@ -80,6 +80,6 @@ module "win_vm" {
 
 module "private-dns-zone" {
   depends_on=[module.rgs]
-  source = "https://github.com/sharanjeetaulakh/terraform-azure-private-dns-zone"
+  source = "git::https://github.com/sharanjeetaulakh/terraform-azure-private-dns-zone"
   private-dns=var.private-dns
 }
