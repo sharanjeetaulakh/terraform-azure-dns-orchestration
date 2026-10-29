@@ -41,13 +41,16 @@ module "network_secuity" {
 
 module "public-ip" {
   depends_on = [module.rgs]
+
   source = "git::https://github.com/sharanjeetaulakh/terraform-azure-public-ip.git"
   pips   = var.pips
 }
+
 module "nic" {
   depends_on = [module.subnet, module.public-ip]
+
   source = "git::https://github.com/sharanjeetaulakh/azurerm-network-interface.git"
-  nics = var.nics
+  nics   = var.nics
 }
 
 module "network_secuity-asso" {
@@ -65,7 +68,6 @@ module "linux_vm" {
   vms-linux            = var.vms-linux
   admin_password_linux = var.admin_password_linux
 }
-
 
 module "win_vm" {
   depends_on = [module.nic, module.public-ip]

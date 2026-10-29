@@ -14,15 +14,14 @@ variable "vms-linux" {
 variable "vms-win" {
   type = any
 }
-
 variable "admin_password_win" {
-  description = "Administrator password for Windows VM"
+  description = "Administrator password for Windows virtual machines"
   type        = string
   sensitive   = true
 }
 
 variable "admin_password_linux" {
-  description = "Administrator password for Linux VM"
+  description = "Administrator password for Linux virtual machines"
   type        = string
   sensitive   = true
 }

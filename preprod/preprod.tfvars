@@ -204,7 +204,7 @@ vms-linux = {
 
 vms-win = {
   vm1 = {
-    name                = "vm-studio-win-preprod-01"
+    name                = "vm-studio-pre01"
     location            = "japaneast"
     resource_group_name = "rg-studio-preprod-01"
     size                = "Standard_D2s_v5"
@@ -221,7 +221,7 @@ vms-win = {
   }
 
   vm2 = {
-    name                = "vm-studio-win-preprod-02"
+    name                = "vm-studio-pre02"
     location            = "japaneast"
     resource_group_name = "rg-studio-preprod-01"
     size                = "Standard_D2s_v5"
