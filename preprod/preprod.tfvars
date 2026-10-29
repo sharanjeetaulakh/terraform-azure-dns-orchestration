@@ -143,7 +143,7 @@ pips = {
   }
 }
 
-vms = {
+vms-linux = {
   linux = {
     name                = "vm-studio-linux-01"
     resource_group_name = "rg-studio-preprod-01"
@@ -168,6 +168,38 @@ vms = {
       Owner       = "DevOps"
     }
   }
+}
+vms-win = {
+  vm1 = {
+    name                 = "vm-studio-win-preprod-01"
+    resource_group_name  = "rg-studio-preprod-01"
+    location             = "Central India"
+    size                 = "Standard_D2s_v5"
+    admin_username       = "azureuser"
+    nic_name             = "nic-studio-win-preprod-01"
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+    publisher            = "MicrosoftWindowsServer"
+    offer                = "WindowsServer"
+    sku                  = "2022-datacenter-azure-edition"
+    version              = "latest"
+  }
+
+  vm2 = {
+    name                 = "vm-studio-win-preprod-02"
+    resource_group_name  = "rg-studio-preprod-01"
+    location             = "Central India"
+    size                 = "Standard_D2s_v5"
+    admin_username       = "azureuser"
+    nic_name             = "nic-studio-win-preprod-02"
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+    publisher            = "MicrosoftWindowsServer"
+    offer                = "WindowsServer"
+    sku                  = "2022-datacenter-azure-edition"
+    version              = "latest"
+  }
+}
 
 
   nats = {

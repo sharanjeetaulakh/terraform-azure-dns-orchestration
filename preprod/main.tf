@@ -41,16 +41,12 @@ module "network_secuity" {
 
 module "public-ip" {
   depends_on = [module.rgs]
-
   source = "git::https://github.com/sharanjeetaulakh/terraform-azure-public-ip.git"
   pips   = var.pips
 }
-
 module "nic" {
   depends_on = [module.subnet, module.public-ip]
-
   source = "git::https://github.com/sharanjeetaulakh/azurerm-network-interface.git"
-
   nics = var.nics
 }
 
@@ -62,7 +58,7 @@ module "network_secuity-asso" {
 }
 
 module "linux_vm" {
-  depends_on = [module.nic,module.public-ip]
+  depends_on = [module.nic, module.public-ip]
 
   source = "git::https://github.com/sharanjeetaulakh/terraform-azure-linux-vm.git"
 
@@ -72,7 +68,7 @@ module "linux_vm" {
 
 
 module "win_vm" {
-  depends_on = [module.nic,module.public-ip]
+  depends_on = [module.nic, module.public-ip]
 
   source = "git::https://github.com/sharanjeetaulakh/terraform-azure-windows.git"
 
