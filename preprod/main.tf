@@ -64,16 +64,16 @@ module "network_secuity-asso" {
 module "linux_vm" {
   depends_on = [module.nic]
 
-  source = "git::https://github.com/sharanjeetaulakh/terraform-azure-linux-vm"
+  source = "git::https://github.com/sharanjeetaulakh/terraform-azure-linux-vm.git"
 
-  vms            = var.vms
-    admin_password = var.admin_password_linux
+  vms-linux = var.vms-linux
 }
 
 module "win_vm" {
   depends_on = [module.nic]
-  source = "git::https://github.com/sharanjeetaulakh/terraform-azure-windows.git"
-  vms-win= var.vms-win
-    admin_password = var.admin_password_win
-}
 
+  source = "git::https://github.com/sharanjeetaulakh/terraform-azure-windows.git"
+
+  vms-win           = var.vms-win
+  admin_password_win = var.admin_password_win
+}

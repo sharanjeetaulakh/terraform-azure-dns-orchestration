@@ -7,17 +7,22 @@ variable "nics" {}
 variable "nsgs" {}
 variable "nsg-asso" {}
 variable "pips" {}
-variable "vms" {}
-variable "admin_password_linux" {
-  type      = string
-    description = "Administrator password for Linux VM"
-
-  sensitive = true
+variable "vms-linux" {
+  type = any
 }
-variable "vms-win"{}
+
+variable "vms-win" {
+  type = any
+}
 
 variable "admin_password_win" {
   description = "Administrator password for Windows VM"
+  type        = string
+  sensitive   = true
+}
+
+variable "admin_password_linux" {
+  description = "Administrator password for Linux VM"
   type        = string
   sensitive   = true
 }
