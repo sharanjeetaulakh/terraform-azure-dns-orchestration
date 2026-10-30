@@ -227,41 +227,41 @@ vms-win = {
     version   = "latest"
   }
 
-    vm2 = {
-      name                = "vm-studio-pre02"
-      location            = "japaneast"
-      resource_group_name = "rg-studio-preprod-01"
-      size                =  "Standard_B1s"
-      admin_username      = "azureadmin"
-      nic_name            = "nic-studio-win-preprod-02"
+  vm2 = {
+    name                = "vm-studio-pre02"
+    location            = "japaneast"
+    resource_group_name = "rg-studio-preprod-01"
+    size                = "Standard_B1s"
+    admin_username      = "azureadmin"
+    nic_name            = "nic-studio-win-preprod-02"
 
-      caching              = "ReadWrite"
-      storage_account_type = "Standard_LRS"
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
 
-      publisher = "MicrosoftWindowsServer"
-      offer     = "WindowsServer"
-      sku       = "2022-datacenter-azure-edition"
-      version   = "latest"
-    }
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2022-datacenter-azure-edition"
+    version   = "latest"
+  }
+}
+
+
+nats = {
+  linux = {
+    name                    = "nat-studio-linux-preprod-01"
+    location                = "japaneast"
+    resource_group_name     = "rg-studio-preprod-01"
+    sku_name                = "Standard"
+    idle_timeout_in_minutes = 10
+    zones                   = ["1"]
   }
 
-  
-  nats = {
-    linux = {
-      name                    = "nat-studio-linux-preprod-01"
-      location                = "japaneast"
-      resource_group_name     = "rg-studio-preprod-01"
-      sku_name                = "Standard"
-      idle_timeout_in_minutes = 10
-      zones                   = ["1"]
-    }
-  
-    windows = {
-      name                    = "nat-studio-windows-preprod-01"
-      location                = "japaneast"
-      resource_group_name     = "rg-studio-preprod-01"
-      sku_name                = "Standard"
-      idle_timeout_in_minutes = 10
-      zones                   = ["1"]
-    }
+  windows = {
+    name                    = "nat-studio-windows-preprod-01"
+    location                = "japaneast"
+    resource_group_name     = "rg-studio-preprod-01"
+    sku_name                = "Standard"
+    idle_timeout_in_minutes = 10
+    zones                   = ["1"]
   }
+}
