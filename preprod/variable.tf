@@ -7,6 +7,7 @@ variable "nics" {}
 variable "nsgs" {}
 variable "nsg-asso" {}
 variable "pips" {}
+variable "nats" {}
 variable "vms-linux" {
   type = any
 }
