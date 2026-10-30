@@ -2,7 +2,7 @@
 rgs = {
   rg01 = {
     name     = "rg-studio-preprod-01"
-    location = "japaneast"
+    location = "central india"
   }
 }
 
@@ -33,7 +33,7 @@ private-dns = {
 vnets = {
   vnet01 = {
     name                = "vnet-studio-preprod-01"
-    location            = "japaneast"
+    location            = "central india"
     resource_group_name = "rg-studio-preprod-01"
     address_space       = ["10.0.0.0/16"]
 
@@ -65,7 +65,7 @@ subnets = {
 nsgs = {
   linux = {
     name                = "nsg-studio-linux-01"
-    location            = "japaneast"
+    location            = "central india"
     resource_group_name = "rg-studio-preprod-01"
 
     security_rules = {
@@ -87,7 +87,7 @@ nsgs = {
 
   windows = {
     name                = "nsg-studio-windows-01"
-    location            = "japaneast"
+    location            = "central india"
     resource_group_name = "rg-studio-preprod-01"
 
     security_rules = {
@@ -131,7 +131,7 @@ nsg-asso = {
 nics = {
   linux = {
     name                 = "nic-studio-linux-01"
-    location             = "japaneast"
+    location             = "central india"
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-linux-01"
     virtual_network_name = "vnet-studio-preprod-01"
@@ -140,7 +140,7 @@ nics = {
 
   windows = {
     name                 = "nic-studio-windows-01"
-    location             = "japaneast"
+    location             = "central india"
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-windows-01"
     virtual_network_name = "vnet-studio-preprod-01"
@@ -149,7 +149,7 @@ nics = {
 
   win2 = {
     name                 = "nic-studio-win-preprod-02"
-    location             = "japaneast"
+    location             = "central india"
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-studio-windows-01"
     virtual_network_name = "vnet-studio-preprod-01"
@@ -161,7 +161,7 @@ pips = {
   pip01 = {
     name                = "pip-studio-preprod-01"
     resource_group_name = "rg-studio-preprod-01"
-    location            = "japaneast"
+    location            = "central india"
     allocation_method   = "Static"
     sku                 = "Standard"
   }
@@ -169,7 +169,7 @@ pips = {
   pip02 = {
     name                = "pip-studio-windows-01"
     resource_group_name = "rg-studio-preprod-01"
-    location            = "japaneast"
+    location            = "central india"
     allocation_method   = "Static"
     sku                 = "Standard"
   }
@@ -177,7 +177,7 @@ pips = {
   pip03 = {
     name                = "pip-studio-windows-02"
     resource_group_name = "rg-studio-preprod-01"
-    location            = "japaneast"
+    location            = "central india"
     allocation_method   = "Static"
     sku                 = "Standard"
   }
@@ -187,9 +187,9 @@ vms-linux = {
   linux = {
     name                = "vm-studio-linux-01"
     resource_group_name = "rg-studio-preprod-01"
-    location            = "japaneast"
+    location            = "central india"
     size                = "Standard_D2s_v5"
-    admin_username      = "azureadmin"
+    admin_username      = "Central India"
     nic_name            = "nic-studio-linux-01"
 
     caching              = "ReadWrite"
@@ -212,10 +212,10 @@ vms-linux = {
 vms-win = {
   vm1 = {
     name                = "vm-studio-pre01"
-    location            = "japaneast"
+    location            = "central india"
     resource_group_name = "rg-studio-preprod-01"
     size                = "Standard_D2s_v5"
-    admin_username      = "azureadmin"
+    admin_username      = "azure-admin"
     nic_name            = "nic-studio-windows-01"
 
     caching              = "ReadWrite"
@@ -229,10 +229,10 @@ vms-win = {
 
   vm2 = {
     name                = "vm-studio-pre02"
-    location            = "japaneast"
+    location            = "central india"
     resource_group_name = "rg-studio-preprod-01"
     size                = "Standard_B1s"
-    admin_username      = "azureadmin"
+    admin_username      = "azure-admin"
     nic_name            = "nic-studio-win-preprod-02"
 
     caching              = "ReadWrite"
@@ -249,7 +249,7 @@ vms-win = {
 nats = {
   linux = {
     name                    = "nat-studio-linux-preprod-01"
-    location                = "japaneast"
+    location                = "central india"
     resource_group_name     = "rg-studio-preprod-01"
     sku_name                = "Standard"
     idle_timeout_in_minutes = 10
@@ -258,7 +258,7 @@ nats = {
 
   windows = {
     name                    = "nat-studio-windows-preprod-01"
-    location                = "japaneast"
+    location                = "central india"
     resource_group_name     = "rg-studio-preprod-01"
     sku_name                = "Standard"
     idle_timeout_in_minutes = 10
