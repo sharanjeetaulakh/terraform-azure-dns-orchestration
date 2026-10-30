@@ -245,8 +245,6 @@ vms-win = {
     }
   }
 
-  NAT Gateway configuration intentionally disabled.
-  Enable only after the NAT Gateway module and subnet associations are configured.
   
   nats = {
     linux = {
