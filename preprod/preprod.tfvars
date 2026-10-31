@@ -228,7 +228,7 @@ vms-linux = {
 
 vms-win = {
   vm1 = {
-    name                = "vm-workstation-prep01"
+    name                = "vm-win-prep01"
     location            = "central india"
     resource_group_name = "rg-studio-preprod-01"
     size                = "Standard_D2s_v5"
@@ -250,7 +250,7 @@ vms-win = {
     name                = "vm-studio-pre02"
     location            = "central india"
     resource_group_name = "rg-studio-preprod-01"
-    size                = "Standard_B1s"
+    size                = "Standard_D2s_v5"
     admin_username      = "azure-admin"
     nic_name            = "nic-studio-win-preprod-02"
 
@@ -285,6 +285,7 @@ nats = {
     zones                   = ["1"]
   }
 }
+
 
 
 
