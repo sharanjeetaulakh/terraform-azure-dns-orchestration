@@ -199,11 +199,12 @@ vms-linux = {
     resource_group_name = "rg-studio-preprod-01"
     location            = "central india"
     size                = "Standard_D2s_v5"
-    admin_ssh_key = {
-      username   = "azure-admin-linux"
-      public_key = "H@llo123456789"
-    }
-    disable_password_authentication = true
+  
+admin_username                  = "azure-admin"
+admin_password                  = "H@llo123456789"
+disable_password_authentication = false
+    
+    
     os_disk = {
       caching              = "ReadWrite"
       storage_account_type = "Standard_LRS"
