@@ -14,21 +14,28 @@ dns-zones = {
 }
 
 dnsrecords = {
+ dnsrecords = {
   record01 = {
-    name                = "test"
-    zone_name           = "aulakhcreative.online"
+    name                = "portal"
+    zone_name           = "studio.preprod.internal"
     resource_group_name = "rg-studio-preprod-01"
     ttl                 = 300
-    records             = ["10.0.180.17"]
+    records             = ["10.0.1.4"]
   }
-}
 
-private-dns = {
-  private-dns01 = {
-    name                = "studio.aulakhcreative.online"
+  record02 = {
+    name                = "workstation01"
+    zone_name           = "studio.preprod.internal"
+    resource_group_name = "rg-studio-preprod-01"
+    ttl                 = 300
+    records             = ["10.0.2.4"]
+  }
+ }
+ } private-dns01 = {
+    name                = "studio.preprod.internal"
     resource_group_name = "rg-studio-preprod-01"
   }
-}
+
 
 vnets = {
   vnet01 = {
@@ -48,14 +55,14 @@ vnets = {
 
 subnets = {
   linux = {
-    name                 = "snet-studio-linux-01"
+    name                 = "snet-web-preprod-01"
     resource_group_name  = "rg-studio-preprod-01"
     virtual_network_name = "vnet-studio-preprod-01"
     address_prefixes     = ["10.0.1.0/24"]
   }
 
   windows = {
-    name                 = "snet-studio-windows-01"
+    name                 = "snet-workstation-preprod-01"
     resource_group_name  = "rg-studio-preprod-01"
     virtual_network_name = "vnet-studio-preprod-01"
     address_prefixes     = ["10.0.2.0/24"]
@@ -133,7 +140,7 @@ nics = {
     name                 = "nic-studio-linux-01"
     location             = "central india"
     resource_group_name  = "rg-studio-preprod-01"
-    subnet_name          = "snet-studio-linux-01"
+    subnet_name          = "snet-web-preprod-01"
     virtual_network_name = "vnet-studio-preprod-01"
     public_ip_name       = "pip-studio-preprod-01"
   }
@@ -142,7 +149,7 @@ nics = {
     name                 = "nic-studio-windows-01"
     location             = "central india"
     resource_group_name  = "rg-studio-preprod-01"
-    subnet_name          = "snet-studio-windows-01"
+    subnet_name          = "snet-workstation-preprod-01"
     virtual_network_name = "vnet-studio-preprod-01"
     public_ip_name       = "pip-studio-windows-01"
   }
@@ -151,7 +158,7 @@ nics = {
     name                 = "nic-studio-win-preprod-02"
     location             = "central india"
     resource_group_name  = "rg-studio-preprod-01"
-    subnet_name          = "snet-studio-windows-01"
+    subnet_name          = "snet-workstation-preprod-01"
     virtual_network_name = "vnet-studio-preprod-01"
     public_ip_name       = "pip-studio-windows-02"
   }
@@ -185,11 +192,12 @@ pips = {
 
 vms-linux = {
   linux = {
-    name                = "vm-studio-linux-01"
+    name                = "vm-web-preprod-01"
     resource_group_name = "rg-studio-preprod-01"
     location            = "central india"
     size                = "Standard_D2s_v5"
     admin_username      = "azure-admin-linux"
+    admin_password      = "Hallo123456789"
     nic_name            = "nic-studio-linux-01"
 
     caching              = "ReadWrite"
@@ -211,11 +219,13 @@ vms-linux = {
 
 vms-win = {
   vm1 = {
-    name                = "vm-studio-pre01"
+    name                = "vm-workstation-prep01"
     location            = "central india"
     resource_group_name = "rg-studio-preprod-01"
     size                = "Standard_D2s_v5"
     admin_username      = "azure-admin"
+        admin_password      = "Hallo123456789"
+
     nic_name            = "nic-studio-windows-01"
 
     caching              = "ReadWrite"
