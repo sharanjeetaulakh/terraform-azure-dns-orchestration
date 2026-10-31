@@ -192,32 +192,38 @@ pips = {
   }
 }
 
-vms-linux = {
-  linux = {
-    name                = "vm-web-preprod-01"
-    resource_group_name = "rg-studio-preprod-01"
-    location            = "central india"
-    size                = "Standard_D2s_v5"
-    admin_username      = "azure-admin-linux"
-    
-    nic_name            = "nic-studio-linux-01"
 
+linux = {
+
+  name                = "vm-web-preprod-01"
+  resource_group_name = "rg-studio-preprod-01"
+  location            = "central india"
+  size                = "Standard_D2s_v5"
+  admin_ssh_key = {
+    username   = "azure-admin-linux"
+    public_key = "H@llo123456789"
+  }
+  disable_password_authentication = true
+  os_disk = {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
+  }
 
+  source_image_reference = {
     publisher = "Canonical"
     offer     = "0001-com-ubuntu-server-jammy"
     sku       = "22_04-lts"
     version   = "latest"
+  }
 
-    tags = {
-      Environment = "Preprod"
-      ManagedBy   = "Terraform"
-      Project     = "Studio"
-      Owner       = "DevOps"
-    }
+  tags = {
+    Environment = "Preprod"
+    ManagedBy   = "Terraform"
+    Project     = "Studio"
+    Owner       = "DevOps"
   }
 }
+
 
 vms-win = {
   vm1 = {
@@ -226,7 +232,7 @@ vms-win = {
     resource_group_name = "rg-studio-preprod-01"
     size                = "Standard_D2s_v5"
     admin_username      = "azure-admin"
-   
+
 
     nic_name = "nic-studio-windows-01"
 
