@@ -192,7 +192,7 @@ pips = {
   }
 }
 
-
+vms-linux = {
 linux = {
 
   name                = "vm-web-preprod-01"
@@ -222,6 +222,8 @@ linux = {
     Project     = "Studio"
     Owner       = "DevOps"
   }
+}
+
 }
 
 
