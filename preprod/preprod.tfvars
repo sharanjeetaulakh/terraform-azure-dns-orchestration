@@ -195,31 +195,24 @@ pips = {
 }
 
 vms-linux = {
-  
   linux = {
-   
+    nic_name            = "nic-studio-linux-01"
+    name                = "vm-web-preprod-01"
+    resource_group_name = "rg-studio-preprod-01"
+    location            = "central india"
+    size                = "Standard_D2s_v5"
 
-    nic_name = "nic-studio-linux-01"
-    name                            = "vm-web-preprod-01"
-    resource_group_name             = "rg-studio-preprod-01"
-    location                        = "central india"
-    size                            = "Standard_D2s_v5"
     admin_username                  = "azure-admin"
-    admin_password                  = "H@llo123456789"
+    admin_password                  = "REPLACE_WITH_NEW_PASSWORD"
     disable_password_authentication = false
 
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
 
-    os_disk = {
-      caching              = "ReadWrite"
-      storage_account_type = "Standard_LRS"
-    }
-
-    source_image_reference = {
-      publisher = "Canonical"
-      offer     = "0001-com-ubuntu-server-jammy"
-      sku       = "22_04-lts"
-      version   = "latest"
-    }
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts"
+    version   = "latest"
 
     tags = {
       Environment = "Preprod"
@@ -228,8 +221,9 @@ vms-linux = {
       Owner       = "DevOps"
     }
   }
-
 }
+
+
 
 
 vms-win = {
