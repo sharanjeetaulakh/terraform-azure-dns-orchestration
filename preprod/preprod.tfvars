@@ -189,7 +189,7 @@ vms-linux = {
     resource_group_name = "rg-studio-preprod-01"
     location            = "central india"
     size                = "Standard_D2s_v5"
-    admin_username      = "Central India"
+    admin_username      = "azure-admin-linux"
     nic_name            = "nic-studio-linux-01"
 
     caching              = "ReadWrite"
