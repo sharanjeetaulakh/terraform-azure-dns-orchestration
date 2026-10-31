@@ -14,28 +14,28 @@ dns-zones = {
 }
 
 dnsrecords = {
-     record01 = {
-      name                = "portal"
-      zone_name           = "studio.preprod.internal"
-      resource_group_name = "rg-studio-preprod-01"
-      ttl                 = 300
-      records             = ["10.0.1.4"]
-    }
-
-    record02 = {
-      name                = "workstation01"
-      zone_name           = "studio.preprod.internal"
-      resource_group_name = "rg-studio-preprod-01"
-      ttl                 = 300
-      records             = ["10.0.2.4"]
-    }
+  record01 = {
+    name                = "portal"
+    zone_name           = "studio.preprod.internal"
+    resource_group_name = "rg-studio-preprod-01"
+    ttl                 = 300
+    records             = ["10.0.1.4"]
   }
 
-private-dns = {
-  private-dns-01={
-  name                = "studio.preprod.internal"
-  resource_group_name = "rg-studio-preprod-01"
+  record02 = {
+    name                = "workstation01"
+    zone_name           = "studio.preprod.internal"
+    resource_group_name = "rg-studio-preprod-01"
+    ttl                 = 300
+    records             = ["10.0.2.4"]
+  }
 }
+
+private-dns = {
+  private-dns-01 = {
+    name                = "studio.preprod.internal"
+    resource_group_name = "rg-studio-preprod-01"
+  }
 }
 
 vnets = {
@@ -194,16 +194,16 @@ pips = {
 vms-linux = {
   linux = {
 
-    name                = "vm-web-preprod-01"
-    resource_group_name = "rg-studio-preprod-01"
-    location            = "central india"
-    size                = "Standard_D2s_v5"
-  name = "nic-studio-linux-01"
-admin_username                  = "azure-admin"
-admin_password                  = "H@llo123456789"
-disable_password_authentication = false
-    
-    
+    name                            = "vm-web-preprod-01"
+    resource_group_name             = "rg-studio-preprod-01"
+    location                        = "central india"
+    size                            = "Standard_D2s_v5"
+    name                            = "nic-studio-linux-01"
+    admin_username                  = "azure-admin"
+    admin_password                  = "H@llo123456789"
+    disable_password_authentication = false
+
+
     os_disk = {
       caching              = "ReadWrite"
       storage_account_type = "Standard_LRS"

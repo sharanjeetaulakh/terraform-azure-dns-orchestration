@@ -23,7 +23,7 @@ variable "admin_password_win" {
 
 variable "admin_password_linux" {
   description = "Administrator password for Linux virtual machines"
-  type      = string
-  sensitive = true
+  type        = string
+  sensitive   = true
 }
 variable "private-dns" {}

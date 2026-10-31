@@ -71,8 +71,8 @@ module "linux_vm" {
   depends_on           = [module.nic, module.public-ip]
   source               = "git::https://github.com/sharanjeetaulakh/terraform-azure-linux-vm.git"
   vms-linux            = var.vms-linux
-admin_password_linux = var.admin_password_linux
- 
+  admin_password_linux = var.admin_password_linux
+
 }
 
 module "win_vm" {
