@@ -31,7 +31,9 @@ dnsrecords = {
     records             = ["10.0.2.4"]
   }
  }
- } private-dns01 = {
+
+ } 
+ private-dns01 = {
     name                = "studio.preprod.internal"
     resource_group_name = "rg-studio-preprod-01"
   }
