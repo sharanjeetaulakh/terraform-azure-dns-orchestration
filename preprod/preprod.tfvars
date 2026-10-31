@@ -138,7 +138,6 @@ nsg-asso = {
 
 nics = {
   linux = {
-    name                 = "nic-studio-linux-01"
     location             = "central india"
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-web-preprod-01"
@@ -194,11 +193,11 @@ pips = {
 vms-linux = {
   linux = {
 
+    nic_name = "nic-studio-linux-01"
     name                            = "vm-web-preprod-01"
     resource_group_name             = "rg-studio-preprod-01"
     location                        = "central india"
     size                            = "Standard_D2s_v5"
-    name                            = "nic-studio-linux-01"
     admin_username                  = "azure-admin"
     admin_password                  = "H@llo123456789"
     disable_password_authentication = false
@@ -285,4 +284,6 @@ nats = {
     zones                   = ["1"]
   }
 }
+
+
 
