@@ -14,29 +14,29 @@ dns-zones = {
 }
 
 dnsrecords = {
- dnsrecords = {
-  record01 = {
-    name                = "portal"
-    zone_name           = "studio.preprod.internal"
-    resource_group_name = "rg-studio-preprod-01"
-    ttl                 = 300
-    records             = ["10.0.1.4"]
+  dnsrecords = {
+    record01 = {
+      name                = "portal"
+      zone_name           = "studio.preprod.internal"
+      resource_group_name = "rg-studio-preprod-01"
+      ttl                 = 300
+      records             = ["10.0.1.4"]
+    }
+
+    record02 = {
+      name                = "workstation01"
+      zone_name           = "studio.preprod.internal"
+      resource_group_name = "rg-studio-preprod-01"
+      ttl                 = 300
+      records             = ["10.0.2.4"]
+    }
   }
 
-  record02 = {
-    name                = "workstation01"
-    zone_name           = "studio.preprod.internal"
-    resource_group_name = "rg-studio-preprod-01"
-    ttl                 = 300
-    records             = ["10.0.2.4"]
-  }
- }
-
- } 
- private-dns01 = {
-    name                = "studio.preprod.internal"
-    resource_group_name = "rg-studio-preprod-01"
-  }
+}
+private-dns01 = {
+  name                = "studio.preprod.internal"
+  resource_group_name = "rg-studio-preprod-01"
+}
 
 
 vnets = {
@@ -199,7 +199,7 @@ vms-linux = {
     location            = "central india"
     size                = "Standard_D2s_v5"
     admin_username      = "azure-admin-linux"
-    admin_password      = "Hallo123456789"
+    
     nic_name            = "nic-studio-linux-01"
 
     caching              = "ReadWrite"
@@ -226,9 +226,9 @@ vms-win = {
     resource_group_name = "rg-studio-preprod-01"
     size                = "Standard_D2s_v5"
     admin_username      = "azure-admin"
-        admin_password      = "Hallo123456789"
+   
 
-    nic_name            = "nic-studio-windows-01"
+    nic_name = "nic-studio-windows-01"
 
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
