@@ -8,7 +8,7 @@ rgs = {
 
 dns-zones = {
   zone01 = {
-    name                = "aulakhcreative.online"
+    name                = "studio.preprod.internal"
     resource_group_name = "rg-studio-preprod-01"
   }
 }
