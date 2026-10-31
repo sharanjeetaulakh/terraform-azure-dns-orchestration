@@ -33,11 +33,12 @@ dnsrecords = {
   }
 
 }
-private-dns01 = {
+private-dns = {
+  private-dns-01={
   name                = "studio.preprod.internal"
   resource_group_name = "rg-studio-preprod-01"
 }
-
+}
 
 vnets = {
   vnet01 = {
