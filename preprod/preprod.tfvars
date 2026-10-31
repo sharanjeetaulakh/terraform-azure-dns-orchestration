@@ -14,8 +14,7 @@ dns-zones = {
 }
 
 dnsrecords = {
-  dnsrecords = {
-    record01 = {
+     record01 = {
       name                = "portal"
       zone_name           = "studio.preprod.internal"
       resource_group_name = "rg-studio-preprod-01"
@@ -32,7 +31,6 @@ dnsrecords = {
     }
   }
 
-}
 private-dns = {
   private-dns-01={
   name                = "studio.preprod.internal"
