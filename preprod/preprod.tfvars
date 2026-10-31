@@ -195,9 +195,9 @@ pips = {
 }
 
 vms-linux = {
-    name = "nic-studio-linux-01"
+  
   linux = {
-    name = "nic-studio-linux-01"
+   
 
     nic_name = "nic-studio-linux-01"
     name                            = "vm-web-preprod-01"
