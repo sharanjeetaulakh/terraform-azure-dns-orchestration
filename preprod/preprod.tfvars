@@ -8,7 +8,7 @@ rgs = {
 
 dns-zones = {
   zone01 = {
-    name                = "studio.preprod.internal"
+    name                = "studio.internal"
     resource_group_name = "rg-studio-preprod-01"
   }
 }
@@ -16,24 +16,24 @@ dns-zones = {
 dnsrecords = {
   record01 = {
     name                = "portal"
-    zone_name           = "studio.preprod.internal"
+    zone_name           = "studio.internal"
     resource_group_name = "rg-studio-preprod-01"
     ttl                 = 300
     records             = ["10.0.1.4"]
   }
 
-  record02 = {
-    name                = "workstation01"
-    zone_name           = "studio.preprod.internal"
-    resource_group_name = "rg-studio-preprod-01"
-    ttl                 = 300
-    records             = ["10.0.2.4"]
-  }
-}
+#   record02 = {
+#     name                = "workstation01"
+#     zone_name           = "studio.internal"
+#     resource_group_name = "rg-studio-preprod-01"
+#     ttl                 = 300
+#     records             = ["10.0.2.4"]
+#   }
+ }
 
 private-dns = {
   private-dns-01 = {
-    name                = "studio.preprod.internal"
+    name                = "studio.internal"
     resource_group_name = "rg-studio-preprod-01"
   }
 }
