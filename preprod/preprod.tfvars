@@ -203,7 +203,7 @@ vms-linux = {
     size                = "Standard_D2s_v5"
 
     admin_username                  = "azure-admin"
-    admin_password                  = "REPLACE_WITH_NEW_PASSWORD"
+    admin_password                  = "H@llo123456789"
     disable_password_authentication = false
 
     caching              = "ReadWrite"
