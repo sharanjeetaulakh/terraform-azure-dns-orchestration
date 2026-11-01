@@ -4,25 +4,25 @@ module "rgs" {
   rgs    = var.rgs
 }
 
-module "dnszone" {
-  depends_on = [module.rgs]
+# module "dnszone" {
+#   depends_on = [module.rgs]
 
-  source    = "git::https://github.com/sharanjeetaulakh/terraform-azure-dns-zone.git"
-  dns-zones = var.dns-zones
-}
+#   source    = "git::https://github.com/sharanjeetaulakh/terraform-azure-dns-zone.git"
+#   dns-zones = var.dns-zones
+# }
 
-module "dnsrecord" {
-  depends_on = [module.rgs, module.dnszone]
+# module "dnsrecord" {
+#   depends_on = [module.rgs, module.dnszone]
 
-  source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-dns-a-record.git"
-  dnsrecords = var.dnsrecords
-}
+#   source     = "git::https://github.com/sharanjeetaulakh/terraform-azure-dns-a-record.git"
+#   dnsrecords = var.dnsrecords
+# }
 
-module "private-dns-zone" {
-  depends_on  = [module.rgs]
-  source      = "git::https://github.com/sharanjeetaulakh/terraform-azure-private-dns-zone"
-  private-dns = var.private-dns
-}
+# module "private-dns-zone" {
+#   depends_on  = [module.rgs]
+#   source      = "git::https://github.com/sharanjeetaulakh/terraform-azure-private-dns-zone"
+#   private-dns = var.private-dns
+# }
 
 
 module "vnet" {
