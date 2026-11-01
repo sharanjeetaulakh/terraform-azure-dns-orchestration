@@ -1,6 +1,6 @@
 variable "rgs" {}
-variable "dns-zones" {}
-variable "dnsrecords" {}
+# variable "dns-zones" {}
+# variable "dnsrecords" {}
 variable "vnets" {}
 variable "subnets" {}
 variable "nics" {}
@@ -26,4 +26,4 @@ variable "admin_password_linux" {
   type        = string
   sensitive   = true
 }
-variable "private-dns" {}
+# variable "private-dns" {}
