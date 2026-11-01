@@ -76,9 +76,10 @@ module "linux_vm" {
 }
 
 module "win_vm" {
-  depends_on         = [module.nic, module.public-ip]
-  source             = "git::https://github.com/sharanjeetaulakh/terraform-azure-windows.git"
+  depends_on = [module.nic, module.public-ip]
+
+  source = "git::https://github.com/sharanjeetaulakh/terraform-azure-windows.git"
+
   vms-win            = var.vms-win
   admin_password_win = var.admin_password_win
 }
-

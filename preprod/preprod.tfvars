@@ -22,14 +22,14 @@ dnsrecords = {
     records             = ["10.1.0.4"]
   }
 
-#   record02 = {
-#     name                = "workstation01"
-#     zone_name           = "studio.internal"
-#     resource_group_name = "rg-studio-preprod-01"
-#     ttl                 = 300
-#     records             = ["10.2.0.4"]
-#   }
- }
+  #   record02 = {
+  #     name                = "workstation01"
+  #     zone_name           = "studio.internal"
+  #     resource_group_name = "rg-studio-preprod-01"
+  #     ttl                 = 300
+  #     records             = ["10.2.0.4"]
+  #   }
+}
 
 private-dns = {
   private-dns-01 = {
@@ -233,7 +233,7 @@ vms-win = {
     resource_group_name = "rg-studio-preprod-01"
     size                = "Standard_D2s_v5"
     admin_username      = "azure-admin"
-
+    admin_password      = "H@llo123456789"
 
     nic_name = "nic-studio-windows-01"
 
@@ -252,6 +252,7 @@ vms-win = {
     resource_group_name = "rg-studio-preprod-01"
     size                = "Standard_D2s_v5"
     admin_username      = "azure-admin"
+    admin_password      = "H@llo123456789"
     nic_name            = "nic-studio-win-preprod-02"
 
     caching              = "ReadWrite"

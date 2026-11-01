@@ -16,7 +16,7 @@ variable "vms-win" {
   type = any
 }
 variable "admin_password_win" {
-  description = "Administrator password for Windows virtual machines"
+  description = "Windows VM administrator password"
   type        = string
   sensitive   = true
 }
