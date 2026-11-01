@@ -6,37 +6,37 @@ rgs = {
   }
 }
 
-dns-zones = {
-  zone01 = {
-    name                = "studio.internal"
-    resource_group_name = "rg-studio-preprod-01"
-  }
-}
+# dns-zones = {
+#   zone01 = {
+#     name                = "studio.internal"
+#     resource_group_name = "rg-studio-preprod-01"
+#   }
+# }
 
-dnsrecords = {
-  record01 = {
-    name                = "portal"
-    zone_name           = "studio.internal"
-    resource_group_name = "rg-studio-preprod-01"
-    ttl                 = 300
-    records             = ["10.1.0.4"]
-  }
+# dnsrecords = {
+#   record01 = {
+#     name                = "portal"
+#     zone_name           = "portal.studio.internal"
+#     resource_group_name = "rg-studio-preprod-01"
+#     ttl                 = 300
+#     records             = ["10.1.0.4"]
+#   }
 
-  #   record02 = {
-  #     name                = "workstation01"
-  #     zone_name           = "studio.internal"
-  #     resource_group_name = "rg-studio-preprod-01"
-  #     ttl                 = 300
-  #     records             = ["10.2.0.4"]
-  #   }
-}
+#   #   record02 = {
+#   #     name                = "workstation01"
+#   #     zone_name           = "studio.internal"
+#   #     resource_group_name = "rg-studio-preprod-01"
+#   #     ttl                 = 300
+#   #     records             = ["10.2.0.4"]
+#   #   }
+# }
 
-private-dns = {
-  private-dns-01 = {
-    name                = "studio.internal"
-    resource_group_name = "rg-studio-preprod-01"
-  }
-}
+# private-dns = {
+#   private-dns-01 = {
+#     name                = "aulakhcreative.internal"
+#     resource_group_name = "rg-studio-preprod-01"
+#   }
+# }
 
 vnets = {
   vnet01 = {
