@@ -19,7 +19,7 @@ dnsrecords = {
     zone_name           = "studio.internal"
     resource_group_name = "rg-studio-preprod-01"
     ttl                 = 300
-    records             = ["10.0.1.4"]
+    records             = ["10.1.0.4"]
   }
 
 #   record02 = {
@@ -27,7 +27,7 @@ dnsrecords = {
 #     zone_name           = "studio.internal"
 #     resource_group_name = "rg-studio-preprod-01"
 #     ttl                 = 300
-#     records             = ["10.0.2.4"]
+#     records             = ["10.2.0.4"]
 #   }
  }
 
