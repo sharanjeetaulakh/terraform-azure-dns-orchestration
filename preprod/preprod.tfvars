@@ -56,7 +56,7 @@ vnets = {
 
 subnets = {
   linux = {
-    name = "nic-studio-linux-01"
+    name                 = "nic-studio-linux-01"
     name                 = "snet-web-preprod-01"
     resource_group_name  = "rg-studio-preprod-01"
     virtual_network_name = "vnet-studio-preprod-01"
@@ -73,7 +73,7 @@ subnets = {
 
 nsgs = {
   linux = {
-    name = "nic-studio-linux-01"
+    name                = "nic-studio-linux-01"
     name                = "nsg-studio-linux-01"
     location            = "central india"
     resource_group_name = "rg-studio-preprod-01"
@@ -120,7 +120,7 @@ nsgs = {
 
 nsg-asso = {
   linux = {
-    name = "nic-studio-linux-01"
+    name                = "nic-studio-linux-01"
     nic_name            = "nic-studio-linux-01"
     nsg_name            = "nsg-studio-linux-01"
     resource_group_name = "rg-studio-preprod-01"
@@ -141,7 +141,7 @@ nsg-asso = {
 
 nics = {
   linux = {
-    name = "nic-studio-linux-01"
+    name                 = "nic-studio-linux-01"
     location             = "central india"
     resource_group_name  = "rg-studio-preprod-01"
     subnet_name          = "snet-web-preprod-01"
@@ -267,7 +267,7 @@ vms-win = {
 
 nats = {
   linux = {
-    name = "nic-studio-linux-01"
+    name                    = "nic-studio-linux-01"
     name                    = "nat-studio-linux-preprod-01"
     location                = "central india"
     resource_group_name     = "rg-studio-preprod-01"
